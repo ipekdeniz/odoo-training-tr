@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="identification_type_list" model="ir.ui.view">
+        <field name="name">Type</field>
+        <field name="model">identification.type</field>
+        <field name="arch" type="xml">
+            <tree string="Standard">
+                <field name="type"/>
+
+            </tree>
+        </field>
+    </record>
+
+    <record id="type_form" model="ir.ui.view">
+        <field name="name">Type</field>
+        <field name="model">identification.type</field>
+        <field name="arch" type="xml">
+            <form string="Standard">
+                <sheet>
+                <group>
+                    <field name="type"/>
+
+                </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="open_type" model="ir.actions.act_window">
+        <field name="name">Types</field>
+        <field name="res_model">identification.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+            id="Type"
+            parent="identification_menu"
+            sequence="5"
+            action="open_type"/>
+</odoo>
